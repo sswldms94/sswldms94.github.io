@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>믹순 웹페이지(모바일)</title>
+    <link rel="stylesheet" href="mobile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="logo"><a href="index-m.html"><img src="img/logo.png" alt="mixsoon" /></a></div>
+      <div class="icons">
+        <div><img src="img/search.png" alt="search" /></div>
+        <div><img src="img/user.png" alt="user" /></div>
+        <div><img src="img/shopping.png" alt="cart" /></div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="#">ABOUT</a>
+          <ul class="submenu">
+            <li><a href="sub1.html">브랜드 스토리</a></li>
+            <li><a href="#">믹순여정</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">BRAND WORK</a>
+          <ul class="submenu">
+            <li><a href="sub1.html">원료사전</a></li>
+            <li><a href="#">Love yourself</a></li>
+            <li><a href="#">북극곰 순디</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">SHOP</a>
+          <ul class="submenu">
+            <li><a href="sub3.html">All</a></li>
+            <li><a href="#">By category </a></li>
+            <li><a href="#">By line</a></li>
+            <li><a href="#">By concern</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">NEWS</a>
+          <ul class="submenu">
+            <li><a href="#">Notice</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">EVENT</a>
+          <ul class="submenu">
+            <li><a href="#">진행중인 이벤트</a></li>
+            <li><a href="#">종료된 이벤트</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">COMMUNITY</a>
+          <ul class="submenu">
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">1:1문의</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 사이드 메뉴 -->
+    <div class="side-menu">
+      <button class="close-btn">×</button>
+      <ul class="side-main-menu">
+        <li class="side-menu-item">
+          <a href="#">ABOUT</a>
+          <ul class="side-submenu">
+            <li><a href="sub1.html">브랜드 스토리</a></li>
+            <li><a href="#">믹순여정</a></li>
+          </ul>
+        </li>
+        <li class="side-menu-item">
+          <a href="#">BRAND WORK</a>
+          <ul class="side-submenu">
+            <li><a href="sub2.html">원료사전</a></li>
+            <li><a href="#">Love yourself</a></li>
+            <li><a href="#">북극곰 순디</a></li>
+          </ul>
+        </li>
+        <li class="side-menu-item">
+          <a href="#">SHOP</a>
+          <ul class="side-submenu">
+            <li><a href="sub3.html">All</a></li>
+            <li><a href="#">By category</a></li>
+            <li><a href="#">By line</a></li>
+            <li><a href="#">By concern</a></li>
+          </ul>
+        </li>
+        <li class="side-menu-item">
+          <a href="#">NEWS</a>
+          <ul class="side-submenu">
+            <li><a href="#">Notice</a></li>
+          </ul>
+        </li>
+        <li class="side-menu-item">
+          <a href="#">EVENT</a>
+          <ul class="side-submenu">
+            <li><a href="#">진행중인 이벤트</a></li>
+            <li><a href="#">종료된 이벤트</a></li>
+          </ul>
+        </li>
+        <li class="side-menu-item">
+          <a href="#">COMMUNITY</a>
+          <ul class="side-submenu">
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">1:1문의</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/main.png" /></div>
+          <div class="swiper-slide"><img src="img/main.png" /></div>
+          <div class="swiper-slide"><img src="img/main.png" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="best-seller">
+      <div class="best">
+        <h2 class="b-text1">BEST SELLER</h2>
+        <div class="button1"><a href="sub3.html"> 제품 보러가기 ></a></div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div style="position: relative">
+            <img src="img/bs-1.jpg" class="product-img" alt="믹순 카밍 부스팅 미스트" />
+          </div>
+          <h3 class="product-title">믹순 카밍 부스팅 미스트 50ml</h3>
+          <div class="product-price">
+            <span class="discount">17%</span>
+            <span class="current-price">14,900원</span>
+            <span class="original-price">18,000원</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div style="position: relative">
+            <img src="img/bs-2.jpg" class="product-img" alt="믹순 물 콩 클렌징 오일" />
+          </div>
+          <h3 class="product-title">믹순 물 콩 클렌징 오일 195ml</h3>
+          <div class="product-price">
+            <span class="discount">28%</span>
+            <span class="current-price">26,000원</span>
+            <span class="original-price">36,000원</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div style="position: relative">
+            <img src="img/bs-3.jpg" class="product-img" alt="믹순 물 콩 토너" />
+          </div>
+          <h3 class="product-title">믹순 물 콩 토너 100ml</h3>
+          <div class="product-price">
+            <span class="discount">35%</span>
+            <span class="current-price">24,000원</span>
+            <span class="original-price">36,500원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video">
+      <div class="mp4">
+        <p>
+          <h3>#산뜻촉촉 #백탁제로 #유기자차<br /></h3>
+          <h2>하얀 백탁 없이 산뜻하게 스며드는 데일리 선크림</h2>
+        </p>
+        <video autoplay muted loop width="100%">
+          <source src="img/mixsoon.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="whyrano">
+        <div class="v-product">
+          <div class="small">
+            <div class="r-img">
+              <img src="img/v1.jpg" alt="믹순 병풀 선크림" />
+            </div>
+            <div class="r-text">
+              <h4 class="bottom-product-title">믹순 병풀 선크림 50g</h4>
+              <p class="bottom-product-price">25,000원</p>
+            </div>
+          </div>
+          
+          <div class="small">
+            <div class="r-img">
+              <img src="img/v2.jpg" alt="믹순 선케어 세트" />
+            </div>
+            <div class="r-text">
+              <h4 class="bottom-product-title">믹순 선케어 세트</h4>
+              <p class="bottom-product-price">85,000원</p>
+            </div>
+          </div>
+    
+          <div class="small">
+            <div class="r-img">
+              <img src="img/v3.jpg" alt="믹순 병풀 선크림 미니" />
+            </div>
+            <div class="r-text">
+              <h4 class="bottom-product-title">믹순 병풀 선크림 5ml</h4>
+              <p class="bottom-product-price">4,500원</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="reviews">
+      <div class="review-card">
+        <img src="img/r1.jpg" class="review-img" alt="리뷰이미지" />
+        <span class="review-date">2025.03.03</span>
+        <span class="review-product">추천 3 조회 551 댓글 1</span>
+        <h3 class="review-title">흡수력 대박</h3>
+        <p class="review-author">이*희</p>
+        <p class="review-content">
+          진짜 너무 좋았어요. 배송받자마자 낮에 한번 바르는데 스며드는데 반하고
+          저녁에 바르고 잤는데 반나절 지났을 뿐인데 진....
+        </p>
+        <div class="star-rating">★★★★★</div>
+        <hr />
+        <div class="bottom-product">
+          <div class="r-img">
+            <img src="img/bs-1.jpg" alt="믹순 카멜 부스팅 미스트" width="80" />
+          </div>
+          <div class="r-text">
+            <h4 class="bottom-product-title">믹순 카밍 부스팅 미스트</h4>
+            <p class="bottom-product-price">40,600원</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="img/r2.png" class="review-img" alt="리뷰이미지" />
+        <span class="review-date">2025.02.24</span>
+        <span class="review-product">추천 1 조회 540 댓글 1</span>
+        <h3 class="review-title">미백에도 좋아요</h3>
+        <p class="review-author">최*진</p>
+        <p class="review-content">
+          이거 완전 대박이에요 하루만에 피부가 달라져요! 아침저녁으로 두번 꼭
+          쓰고 있는데 진짜 명품이고 뭐고 다써봤지만 이거완전...
+        </p>
+        <div class="star-rating">★★★★★</div>
+        <hr />
+        <div class="bottom-product">
+          <div class="r-img">
+            <img src="img/set1.jpg" alt="믹순 광채생기 컴플리트 세트" width="80" />
+          </div>
+          <div class="r-text">
+            <h4 class="bottom-product-title">믹순 광채생기 컴플리트 세트</h4>
+            <p class="bottom-product-price">154,000원</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="img/r3.jpg" class="review-img" alt="리뷰이미지" />
+        <span class="review-date">2025.02.22</span>
+        <span class="review-product">추천 1 조회 521 댓글 1</span>
+        <h3 class="review-title">정답이네요</h3>
+        <p class="review-author">김*은</p>
+        <p class="review-content">
+          엄청 예민한 피부를 가진 사람입니다. 모든제품 한두번만 발라보면
+          안맞아서 못쓰고 이 제품 우연히 광고보고 알게되서 속는셈...
+        </p>
+        <div class="star-rating">★★★★★</div>
+        <hr />
+        <div class="bottom-product">
+          <div class="r-img">
+            <img src="img/bp1.jpg" alt="믹순 펩타이드" width="80" />
+          </div>
+          <div class="r-text">
+            <h4 class="bottom-product-title">믹순 펩타이드 시카 히알샷</h4>
+            <p class="bottom-product-price">32,500원</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="story">
+        <h3 class="brand-title-en">Premium Skincare Brand For Glass Skin, mixsoon</h3>
+        <h2 class="brand-title-ko">순수 원료주의 스킨케어 브랜드, 믹순</h2>
+        <a href="/brand-story" class="brand-story-btn">원료사전 전체보기 ></a>
+      </div>
+
+      <div class="container">
+        <div class="brand-images">
+          <img src="img/brand1.png" class="brand-img" alt="비피다" />
+          <div class="overlay">
+            <p style="font-size: 1rem">비피다</p>
+            <p>Bifida</p>
+            <br />
+            <p>유수분 밸런스로<br>손상된 피부 장벽 케어</p>
+            <br />
+            <div class="button2">Learn more</div>
+          </div>
+        </div>
+        <div class="brand-images">
+          <img src="img/brand2.png" class="brand-img" alt="콩" />
+          <div class="overlay">
+            <p style="font-size: 1rem">콩</p>
+            <p>Bean</p>
+            <br />
+            <p>매끈하게 빛나는 피부를 위한<br>영양 듬뿍 건강한 발효 콩</p>
+            <br />
+            <div class="button2">Learn more</div>
+          </div>
+        </div>
+        <div class="brand-images">
+          <img src="img/brand3.png" class="brand-img" alt="갈락토미세스" />
+          <div class="overlay">
+            <p style="font-size: 1rem">갈락토미세스</p>
+            <p>Galactomyces</p>
+            <br />
+            <p>풍부한 미네랄과 효모로<br>맑고 투명한 피부 톤 케어</p>
+            <br />
+            <div class="button2">Learn more</div>
+          </div>
+        </div>
+        <div class="brand-images">
+          <img src="img/brand4.png" class="brand-img" alt="병풀" />
+          <div class="overlay">
+            <p style="font-size: 1rem">병풀</p>
+            <p>Centella Asiatica</p>
+            <br />
+            <p>수분 공급으로<br>민감한 피부를 편안하게 진정</p>
+            <br />
+            <div class="button2">Learn more</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo"><a href="index-m.html"><img src="img/logo.png" width="100" alt="mixsoon" /></div></a>
+
+      <div class="footer-info">
+        <div class="footer-company">
+          <p>주식회사 피켓 | 대표 : 황주업 | 사업자등록번호 : 260-87-00321</p>
+          <p>통신판매업신고 : 2020-서울강남-00900</p>
+          <p>주소 : (06021) 서울 강남구 도산대로 45길 6 <br>호림아트센터 2빌딩 지상 2층 202, 203호(신사동, 호림아트센터 2빌딩)</p>
+          <p>개인정보 책임자 : 이유신</p><br>
+          <p>해외수출 문의(B2B Wholesale Inquiry) b2binquiry@pkcosm.com</p>
+        </div>
+
+        <div class="footer-contact">
+          <p>고객 지원</p>
+          <p>070-7730-5659</p>
+          <p>평일 09:00 - 17:30</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <!-- 사이드 메뉴 JavaScript 코드 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 메뉴 토글 버튼 클릭 이벤트
+        const menuToggle = document.getElementById('menuToggle');
+        const sideMenu = document.querySelector('.side-menu');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        // 메뉴 버튼 클릭시 사이드 메뉴 열기
+        menuToggle.addEventListener('click', function() {
+          sideMenu.classList.add('open');
+        });
+        
+        // 닫기 버튼 클릭시 사이드 메뉴 닫기
+        closeBtn.addEventListener('click', function() {
+          sideMenu.classList.remove('open');
+        });
+        
+        // 사이드 메뉴 아이템 클릭 이벤트 (서브메뉴 토글)
+        const sideMenuItems = document.querySelectorAll('.side-menu-item > a');
+        
+        sideMenuItems.forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            // 링크 이동 방지
+            e.preventDefault();
+            
+            // 클릭한 항목의 부모 요소를 찾아 active 클래스 토글
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+            
+            // 서브메뉴 높이 조절 (CSS transition으로 애니메이션 효과)
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+              if (parent.classList.contains('active')) {
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+              } else {
+                submenu.style.maxHeight = '0';
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,735 @@
+/* 모바일 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #fcfcf8;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 모바일 헤더 스타일 */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 0.9375rem;
+  position: relative;
+  border-bottom: 0.0625rem solid #eee;
+  width: 100%;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+  margin-left: 1.25rem;
+}
+
+.logo img {
+  width: 6.25rem;
+  max-width: 100%;
+}
+
+.menu-toggle {
+  font-size: 1.125rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3125rem;
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icons div {
+  width: 0.875rem;
+}
+
+/* 모바일 네비게이션 */
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 0.0625rem solid #eee;
+}
+
+.nav.active {
+  display: block;
+}
+
+.nav ul {
+  flex-direction: column;
+}
+
+.nav ul li {
+  border-bottom: 0.0625rem solid #f0f0f0;
+}
+
+.nav ul li a {
+  padding: 0.625rem 0.9375rem;
+  display: block;
+  font-size: 0.875rem;
+  margin-left: 0;
+}
+
+.nav ul li .submenu {
+  position: static;
+  display: none;
+  width: 100%;
+  box-shadow: none;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+.nav ul li.active .submenu {
+  display: block;
+}
+
+.nav ul li .submenu li a {
+  padding-left: 1.5625rem;
+  font-size: 0.8125rem;
+}
+
+/* 기본 초기화 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* 상단 헤더 영역 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  color: white;
+  padding: 10px 0.8rem;
+}
+
+/* 로고 */
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10x;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.main-menu li a {
+  font-size: 0.95rem;
+  color: white;
+  text-decoration: none;
+  padding: 10px 1.5rem;
+  display: block;
+}
+
+/* 수평 메뉴용 드롭다운 서브메뉴 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #444;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.submenu li a {
+  padding: 10px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+/* 햄버거 버튼 */
+.menu-toggle {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  width: 20px;
+  height: 2px;
+  background: white;
+}
+
+/* 사이드 메뉴 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background: #fcfcf8;
+  padding: 60px 20px;
+  transition: left 0.7s ease-in-out;
+  z-index: 999;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  color: #808080;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #808080;
+}
+
+/* 사이드 메뉴 항목 */
+.side-main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu-item {
+  position: relative;
+}
+
+.side-menu-item > a {
+  display: block;
+  padding: 10px 0;
+  color: #444444;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* 사이드 서브메뉴: 슬라이드 다운 효과 */
+.side-submenu {
+  list-style: none;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}
+
+.side-menu-item:hover .side-submenu {
+  max-height: 500px; /* 충분히 큰 값 */
+}
+
+.side-submenu li a {
+  display: block;
+  padding: 6px 0;
+  color: #6d6c6c;
+  text-decoration: none;
+}
+
+/* 반응형: 작은 화면에서는 숨김 (선택사항) */
+@media (max-width: 500px) {
+  .main-menu {
+    display: none;
+  }
+}
+
+/* 메인 섹션 */
+
+.main {
+  height: auto;
+  width: 100%;
+}
+
+.swiper {
+  height: auto;
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Swiper 스타일 */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:root {
+  --swiper-theme-color: #333;
+}
+
+/* 베스트셀러 섹션 */
+.best-seller {
+  padding: 1.875rem 0.9375rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+}
+
+.best {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.b-text1 {
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.button1 {
+  border: 0.0625rem solid #e2e2e2;
+  background-color: white;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  margin: 1rem auto;
+  width: 9rem;
+  text-align: center;
+  display: block;
+}
+
+.product-grid {
+  flex-direction: column;
+  margin-left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.product-card {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  max-height: 12.5rem;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.product-price {
+  justify-content: center;
+  margin-left: 0;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 0.3125rem;
+  flex-wrap: wrap;
+}
+
+.discount {
+  color: red;
+}
+
+.original-price {
+  text-decoration: line-through;
+}
+
+/* 비디오 섹션 */
+.video {
+  flex-direction: column;
+  height: auto;
+  padding: 1.875rem 0.9375rem;
+  gap: 1.25rem;
+  background: white;
+}
+
+.mp4 {
+  width: 100%;
+}
+
+.video h3 {
+  color: green;
+  font-size: 0.9rem;
+}
+
+.video h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.625rem;
+}
+
+.mp4 video {
+  width: 100%;
+  height: auto;
+  margin-top: 0.625rem;
+}
+
+.whyrano {
+  padding-top: 0.9375rem;
+  width: 100%;
+}
+
+.v-product {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.small {
+  text-align: center;
+  font-size: 0.8rem;
+  width: 30%;
+}
+
+.r-img img {
+  width: 100%;
+  max-width: 5rem;
+  height: auto;
+}
+
+/* 리뷰 섹션 */
+.reviews {
+  flex-direction: column;
+  padding: 1.875rem 0.9375rem;
+  margin: 0;
+}
+
+.review-card {
+  width: 100%;
+  margin-bottom: 1.5625rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.review-img {
+  width: 100%;
+  height: auto;
+  max-height: 11.25rem;
+  object-fit: cover;
+}
+
+.review-date {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.review-product {
+  margin-left: 0;
+  float: right;
+  font-size: 0.8rem;
+}
+
+.review-title {
+  font-size: 1rem;
+  margin: 0.3125rem 0;
+}
+
+.review-author {
+  font-size: 0.85rem;
+  margin-bottom: 0.3125rem;
+}
+
+.review-content {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.star-rating {
+  margin: 0.3125rem 0;
+  color: gold;
+}
+
+.bottom-product {
+  display: flex;
+  align-items: center;
+  margin-top: 0.625rem;
+}
+
+.bottom-product-title {
+  margin-bottom: 0.3125rem;
+  font-size: 0.85rem;
+}
+
+.bottom-product-price {
+  font-size: 0.8rem;
+}
+
+.r-text {
+  margin-left: 0.625rem;
+}
+
+/* 브랜드 섹션 */
+.brand-section {
+  padding: 1.875rem 0.9375rem;
+  flex-direction: column;
+  background-color: #fcfcf8;
+}
+
+.story {
+  text-align: center;
+  padding: 0 0 1.25rem 0;
+  color: #808080;
+}
+
+.brand-title-en {
+  font-size: 0.8rem;
+  margin-bottom: 0.3125rem;
+}
+
+.brand-title-ko {
+  font-size: 1.1rem;
+  margin-bottom: 0.9375rem;
+}
+
+.brand-story-btn {
+  margin: 0 auto;
+  display: block;
+  width: 9.375rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  border: 0.0625rem solid #ddd;
+  background: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 1rem;
+}
+
+.brand-images {
+  width: 100%;
+  position: relative;
+}
+
+.brand-img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 97%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9375rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.brand-images:hover .overlay {
+  opacity: 1;
+}
+
+.button2 {
+  border: 0.0625rem solid white;
+  border-radius: 6.25rem;
+  padding: 0.3125rem 0.9375rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* 푸터 */
+footer {
+  padding: 1.5625rem 0.9375rem;
+  background-color: #f8f8f8;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 0.9375rem;
+}
+
+.footer-info {
+  flex-direction: column;
+}
+
+.footer-company {
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-company p {
+  margin-bottom: 0.3125rem;
+}
+
+.footer-contact {
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-contact p {
+  margin-bottom: 0.3125rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.9375rem;
+  margin-top: 0.9375rem;
+}
+
+.divider {
+  height: 0.0625rem;
+  background-color: #ddd;
+  margin: 0.9375rem 0;
+}
+
+.copyright {
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* 320px 이하 화면을 위한 미디어 쿼리 */
+@media (max-width: 20rem) {
+  header {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .logo {
+    margin-left: 0.625rem;
+  }
+
+  .logo img {
+    width: 5rem;
+  }
+
+  .icons {
+    gap: 0.3125rem;
+  }
+
+  .menu-toggle {
+    font-size: 1rem;
+  }
+
+  .best-seller {
+    padding: 1.25rem 0.625rem;
+  }
+
+  .best {
+    margin-top: 1.25rem;
+  }
+
+  .b-text1 {
+    font-size: 1rem;
+  }
+
+  .button1 {
+    width: 8rem;
+    font-size: 0.75rem;
+  }
+
+  .video h2 {
+    font-size: 1rem;
+  }
+
+  .video h3 {
+    font-size: 0.8rem;
+  }
+
+  .small {
+    width: 32%;
+  }
+
+  .review-title {
+    font-size: 0.9rem;
+  }
+
+  .review-content {
+    font-size: 0.8rem;
+  }
+
+  .brand-title-ko {
+    font-size: 1rem;
+  }
+}
