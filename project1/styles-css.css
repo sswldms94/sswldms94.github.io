@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+body {
+  color: black;
+  font-size: 1.1rem;
+}
+
+header {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+}
+
+.video {
+  height: 800px;
+  background: url(video.jpg) center/cover no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header {
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 140px;
+  margin-right: 2%;
+}
+ul,
+.footer ul {
+  width: max-content;
+}
+li,
+.footer ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1.2rem;
+  font-size: 100%;
+}
+
+.main {
+  position: relative;
+  height: 1100px;
+  background: url(main.JPG);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.m-text {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  text-align: center;
+}
+
+.ct1 {
+  height: 1150px;
+  background: black;
+  color: white;
+  font-size: 4rem;
+  padding: 6.25rem;
+  padding-bottom: -6.25rem;
+}
+.ct1-text {
+  height: 320px;
+}
+.ct1-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 3.75rem;
+}
+.ct1-img1,
+.ct1-img2,
+.ct1-img3 {
+  margin: 0.06rem 0.6rem;
+  width: 100%;
+}
+
+.ct2 {
+  padding: 10%;
+  padding-bottom: 60%;
+  height: 800px;
+}
+.ct2-text {
+  text-align: center;
+  width: 100%;
+  max-width: 1300px;
+  font-size: 6rem;
+  margin: auto;
+}
+.ct2-box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.ct2-max,
+.ct2-creo {
+  padding: 0.6rem;
+  width: 40%;
+}
+.ct2-max img,
+.ct2-creo img {
+  padding: 0.6rem;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  height: 50px;
+  width: 200px;
+  border-radius: 00%;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+}
+
+.ct3 {
+  height: 1800px;
+  background-image: url(ct3.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  padding: 6.25rem 0px;
+  margin: 18.75rem 0px;
+  position: relative;
+}
+.ct3-img1,
+.ct3-img2,
+.ct3-img3 {
+  height: 600px;
+  width: 400px;
+  position: absolute;
+}
+.ct3-img1 {
+  top: 10%;
+  left: 60%;
+}
+.ct3-img2 {
+  top: 35%;
+  left: 25%;
+}
+.ct3-img3 {
+  top: 70%;
+  left: 50%;
+}
+
+.ct4 {
+  height: 600px;
+  background: url(ct4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 6.25rem 0rem;
+  color: white;
+  position: relative;
+}
+.ct4-text {
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1300px;
+  margin: auto;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 1.25rem;
+}
+.f-box1,
+.f-box3 {
+  display: flex;
+  justify-content: space-between;
+}
+.f-box2,
+.f-text1 {
+  font-size: 0.8rem;
+  padding: 0.6rem;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .wrap {
+    width: 95%;
+    margin: 3rem auto;
+  }
+  .header,
+  .ct1,
+  .ct1-box,
+  .footer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0rem;
+    font-size: 80%;
+  }
+  .logo {
+    margin: auto;
+  }
+  .nav {
+    widows: 80%;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    font-size: 1rem;
+    height: 340px;
+  }
+  .main {
+    height: 800px;
+  }
+  .m-text {
+    font-size: 4rem;
+  }
+
+  .ct1 {
+    width: 100%;
+    height: 93rem;
+    margin: auto;
+  }
+  .ct1-text {
+    margin-bottom: 4rem;
+  }
+  .ct1-box {
+    width: 98%;
+    padding: 0.1rem;
+    flex-wrap: center;
+  }
+  .ct2-text {
+    font-size: 3rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .ct3 {
+    height: 1000px;
+    background-size: 100%;
+    margin: 0rem 0rem;
+  }
+  .ct3-img1,
+  .ct3-img2,
+  .ct3-img3 {
+    width: 10rem;
+  }
+  .ct3-img2 {
+    margin-left: -7rem;
+  }
+
+  .ct4 {
+    background-size: 100%;
+    margin-bottom: -400px;
+  }
+  .ct4-text {
+    margin-top: -12rem;
+    line-height: 1rem;
+  }
+  .ct4-text p b {
+    font-size: 1.5rem;
+  }
+  .ct4-text p {
+    font-size: 0.8rem;
+  }
+  .footer {
+    height: 300px;
+  }
+  .f-box1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .f-box2 {
+    margin-top: -300px;
+  }
+}
