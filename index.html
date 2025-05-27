@@ -80,6 +80,26 @@
         z-index: 3;
         color: red;
       }
+
+      /* YouTube 영상을 위한 스타일 */
+      .youtube-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 비율 */
+        margin: 20px 0;
+        overflow: hidden;
+      }
+
+      .youtube-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
+      }
     </style>
   </head>
 
@@ -208,8 +228,8 @@
         <div class="column folio-item">
           <a href="#modal-03" class="folio-item__thumb">
             <img
-              src="images/portfolio/port09.jpg"
-              srcset="images/portfolio/port09.jpg, images/portfolio/port09.jpg"
+              src="images/portfolio/port11.jpg"
+              srcset="images/portfolio/port11.jpg, images/portfolio/port11.jpg"
               alt=""
             />
           </a>
@@ -252,8 +272,8 @@
         <div class="column folio-item">
           <a href="#modal-07" class="folio-item__thumb">
             <img
-              src="images/portfolio/port11.jpg"
-              srcset="images/portfolio/port11.jpg, images/portfolio/port11.jpg"
+              src="images/portfolio/port08.jpg"
+              srcset="images/portfolio/port08.jpg, images/portfolio/port08.jpg"
               alt=""
             />
           </a>
@@ -263,8 +283,8 @@
         <div class="column folio-item">
           <a href="#modal-08" class="folio-item__thumb">
             <img
-              src="images/portfolio/port08.jpg"
-              srcset="images/portfolio/port08.jpg, images/portfolio/port08.jpg"
+              src="images/portfolio/port13.gif"
+              srcset="images/portfolio/port13.gif, images/portfolio/port13.gif"
               alt=""
             />
           </a>
@@ -362,11 +382,12 @@
 
       <div id="modal-03" hidden>
         <div class="modal-popup">
-          <img src="images/portfolio/p06.jpg" alt="" />
+          <img src="images/portfolio/08.jpg" alt="" />
           <div class="modal-popup__desc">
-            <h5>SNS WEB BANNER</h5>
+            <h5>WEB BANNER</h5>
             <p class="ps"></p>
             
+            <p></p>
           </div>
         </div>
       </div>
@@ -421,12 +442,13 @@
 
       <div id="modal-07" hidden>
         <div class="modal-popup">
-          <img src="images/portfolio/08.jpg" alt="" />
+          <img src="images/portfolio/m03.jpg" alt="" />
+
           <div class="modal-popup__desc">
-            <h5>WEB BANNER</h5>
+            <h5>PACKAGE RE-DESIGN</h5>
             <p class="ps"></p>
             
-            <p></p>
+         
           </div>
         </div>
       </div>
@@ -434,11 +456,21 @@
 
       <div id="modal-08" hidden>
         <div class="modal-popup">
-          <img src="images/portfolio/m03.jpg" alt="" />
-
           <div class="modal-popup__desc">
-            <h5>PACKAGE RE-DESIGN</h5>
+            <h5>SHORT-FORM VIDEO PRODUCTION
+            </h5>
             <p class="ps"></p>
+            
+            <!-- YouTube 영상 추가 -->
+            <div class="youtube-container">
+              <iframe 
+                src="https://www.youtube.com/embed/5OvZCf-QSPw" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
          
           </div>
         </div>
