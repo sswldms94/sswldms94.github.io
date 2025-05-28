@@ -81,24 +81,52 @@
         color: red;
       }
 
-      /* YouTube 영상을 위한 스타일 */
-      .youtube-container {
+      /* 비디오를 위한 스타일 */
+      .video-container {
         position: relative;
         width: 100%;
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9 비율 */
-        margin: 20px 0;
+        max-width: 500px;
+        margin: 10px auto;
+        text-align: center;
         overflow: hidden;
       }
 
-      .youtube-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+      .video-container video {
         width: 100%;
-        height: 100%;
-        border: none;
+        height: auto;
+        max-height: 700px;
         border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* 비디오 플레이 버튼 스타일 */
+      .video-play-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+      }
+
+      .video-play-overlay::after {
+        content: '▶';
+        color: white;
+        font-size: 24px;
+        margin-left: 3px;
+      }
+
+      .video-play-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
       }
     </style>
   </head>
@@ -461,15 +489,24 @@
             </h5>
             <p class="ps"></p>
             
-            <!-- YouTube 영상 추가 -->
-            <div class="youtube-container">
-              <iframe 
-                src="https://www.youtube.com/embed/5OvZCf-QSPw" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-              </iframe>
+            <!-- 비디오 추가 -->
+            <div class="video-container">
+              <div class="video-play-overlay" onclick="playVideo(this)"></div>
+              <video 
+                id="portfolioVideo"
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                controls
+                preload="auto"
+                oncanplay="handleVideoReady(this)"
+                onplay="hidePlayOverlay(this)"
+                onpause="showPlayOverlay(this)"
+              >
+                <source src="images/portfolio/video.mp4" type="video/mp4">
+                브라우저가 비디오를 지원하지 않습니다.
+              </video>
             </div>
          
           </div>
@@ -622,7 +659,7 @@
                 <p class="contact-block__content">
                   <a href="tel:+11115555">010 5617 6785</a>
                 </p>
-              </div>
+                </div>
               <!-- end contact-block -->
             </div>
           </div>
@@ -674,6 +711,85 @@
         var iframe = document.getElementById("iframe");
         iframe.src = ""; // 끌 때 iframe 초기화 (선택사항)
       }
+
+      // 비디오 자동재생 개선 함수들
+      function playVideo(overlay) {
+        const video = overlay.nextElementSibling;
+        if (video && video.tagName === 'VIDEO') {
+          video.play().then(() => {
+            overlay.classList.add('hidden');
+          }).catch(error => {
+            console.log('자동재생이 차단되었습니다:', error);
+            // 사용자 상호작용이 필요한 경우 플레이 버튼 표시
+          });
+        }
+      }
+
+      function handleVideoReady(video) {
+        // 비디오가 로드되면 자동으로 재생 시도
+        if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+          video.play().catch(error => {
+            console.log('자동재생이 차단되었습니다:', error);
+            // 자동재생이 차단된 경우 플레이 오버레이 표시
+            const overlay = video.previousElementSibling;
+            if (overlay && overlay.classList.contains('video-play-overlay')) {
+              overlay.style.display = 'flex';
+            }
+          });
+        }
+      }
+
+      function hidePlayOverlay(video) {
+        const overlay = video.previousElementSibling;
+        if (overlay && overlay.classList.contains('video-play-overlay')) {
+          overlay.classList.add('hidden');
+        }
+      }
+
+      function showPlayOverlay(video) {
+        const overlay = video.previousElementSibling;
+        if (overlay && overlay.classList.contains('video-play-overlay')) {
+          overlay.classList.remove('hidden');
+        }
+      }
+
+      // 모달이 열릴 때 비디오 자동재생 시도
+      document.addEventListener('DOMContentLoaded', function() {
+        // MutationObserver를 사용하여 모달 열림 감지
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'hidden') {
+              const modal = mutation.target;
+              if (modal.id === 'modal-08' && !modal.hasAttribute('hidden')) {
+                // 모달-08이 열렸을 때
+                setTimeout(() => {
+                  const video = modal.querySelector('#portfolioVideo');
+                  if (video) {
+                    video.currentTime = 0; // 처음부터 재생
+                    video.play().catch(error => {
+                      console.log('모달에서 자동재생이 차단되었습니다:', error);
+                    });
+                  }
+                }, 100);
+              }
+            }
+          });
+        });
+
+        // 모든 모달 관찰
+        const modals = document.querySelectorAll('[id^="modal-"]');
+        modals.forEach(modal => {
+          observer.observe(modal, { attributes: true });
+        });
+      });
+
+      // 페이지 로드 시 비디오 사전 로드
+      window.addEventListener('load', function() {
+        const video = document.getElementById('portfolioVideo');
+        if (video) {
+          video.load(); // 비디오 사전 로드
+        }
+      });
     </script>
   </body>
 </html>
